@@ -1,12 +1,16 @@
 #store-locator-container
   #page-header
-    %h2 Store Locator
+    :erb
+        <h2><%= t(:Store_Locator) %></h2>
   #form-container
     %form#user-location{ action: '#', method: 'post' }
       #form-input
-        %label{ for: 'address' } Enter Address or Zip Code:
+        :erb
+          <%= label_tag :address, t(:Enter_address_or_zip)%>
         %input#address{ name: 'address', type: 'text' }/
-      %button#submit{ type: 'submit' } Submit
+      :erb
+         <%= submit_tag Spree.t(:submit), :class => 'btn continue button primary', :id => 'submit' %>
+
   #map-container
     #loc-list
       %ul#list

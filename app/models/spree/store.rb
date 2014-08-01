@@ -10,5 +10,6 @@ class Spree::Store < ActiveRecord::Base
     "#{address1}, #{address2}, #{city}, #{state} #{zip}, #{country}"
   end
 
+  attr_accessible :address1, :address2, :city, :state, :zip, :name, :country, :phone, :website
 end
 

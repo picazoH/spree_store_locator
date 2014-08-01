@@ -1,7 +1,7 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+es:
   hello: "Hello world"
-  Store_Locator: "Store Locator"
-  Enter_address_or_zip: "Enter Address or Zip Code:"
+  Store_Locator: "Localizador de tiendas"
+  Enter_address_or_zip: "Escriba la dirección o ciudad:"

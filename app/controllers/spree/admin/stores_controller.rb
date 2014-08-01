@@ -1,7 +1,7 @@
 module Spree
   module Admin
     class StoresController < Spree::Admin::BaseController
-      before_action :find_store, only: [:edit, :update, :destroy]
+      before_filter :find_store, only: [:edit, :update, :destroy]
 
       def index
         load_stores
@@ -28,8 +28,8 @@ module Spree
       end
 
       def destroy
-        @store.destroy
-
+        store = find_store
+        store.destroy
         redirect_to admin_stores_path
       end
 
@@ -41,21 +41,21 @@ module Spree
       end
 
       def find_store
-        @store = Spree::Store.find_by id: params[:id]
+        @store = Spree::Store.find_by_id(params[:id])
       end
 
       def store_params
-        params.require(:store).permit(
-          :address1,
-          :address2,
-          :city,
-          :country,
-          :name,
-          :phone,
-          :state,
-          :website,
-          :zip
-        )
+        {
+          :address1 => params[:store][:address1],
+          :address2 => params[:store][:adress2],
+          :city => params[:store][:city],
+          :country => params[:store][:country],
+          :name => params[:store][:name],
+          :phone => params[:store][:phone],
+          :state => params[:store][:state],
+          :website => params[:store][:website],
+          :zip => params[:store][:zip]
+        }
       end
     end
   end
