@@ -61,8 +61,8 @@ $.fn.storeLocator = function(options) {
       'distanceErrorAlert': 'Unfortunately, our closest location is more than\nNuestra ubicación más cercana está a más de ',
       'mileLang': 'mile',
       'milesLang': 'miles',
-      'kilometerLang': 'kilometer',
-      'kilometersLang': 'kilometers'
+      'kilometerLang': 'km',
+      'kilometersLang': 'Kms'
   }, options);
 
   return this.each(function() {
